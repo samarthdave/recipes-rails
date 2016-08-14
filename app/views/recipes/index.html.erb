@@ -1,0 +1,21 @@
+<div class="container">
+	<h2 class="text-center">Listing all recipes here</h2>
+	<% if @recipes.count == 0 %>
+		<h3>Nothing to show here! <%= link_to 'Create a recipe!', new_recipe_path %> or sign up now!</h3>
+	<% end %>
+	<% @recipes.each do |recipe| %>
+		<div class="row">
+			<div class="col-md-2">
+				<div class="chef_info text-center">
+					<%= gravatar_for recipe.user, size: 100 %>
+					<h4><strong><%= recipe.user.chefname %></strong></h4>
+				</div>
+			</div>
+			<div class="col-md-8 well">
+				<h4><%= link_to recipe.name, show_recipe_path(recipe) %></h4>
+				<p><%= recipe.summary %></p>
+				<small><i><%= time_ago_in_words(recipe.created_at) %></i></small>
+			</div>
+		</div>
+	<% end %>
+</div>

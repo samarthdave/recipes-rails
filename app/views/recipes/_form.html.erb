@@ -1,0 +1,36 @@
+<%= form_for(@recipe, html: {class: 'well'}) do |f| %>
+
+	<% if false %>
+		<div class="row">
+			<div class="alert alert-danger col-md-8 col-md-offset-2">
+				Please correct the following errors:
+				<ul>
+					<% @recipe.errors.full_messages.each do |error| %>
+						<li><%= error %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	<% end %>
+
+	<h2 class="text-center"><%= @form_title %></h2>
+	<div class="form-group">
+		<%= f.label :name, class: 'sr-only' %>
+		<%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+	</div>
+	
+	<div class="form-group">
+		<%= f.label :summary, class: 'sr-only' %>
+		<%= f.text_area :summary, class: 'form-control', placeholder: 'Summary' %>
+	</div>
+	
+	<div class="form-group">
+		<%= f.label :description, class: 'sr-only' %>
+		<%= f.text_area :description, class: 'form-control', placeholder: 'Steps', rows: 10 %>
+	</div>
+	
+	<div class="form-group">
+		<%= f.submit class: 'btn btn-success' %>
+	</div>
+
+<% end %>

@@ -10,6 +10,48 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require bsm.min
  *= require_tree .
  *= require_self
  */
+::-webkit-input-placeholder {
+	color: #777!important;
+}
+:-moz-placeholder {
+	color: #777!important;
+}
+::-moz-placeholder {
+	color: #777!important;
+}
+:-ms-input-placeholder {  
+	color: #f27d7d!important;  
+}
+::selection {}
+::-moz-selection {}
+html {
+	height: 100%;
+}
+h1, h2, h3, h4, h5 {
+	margin-top: 0;
+}
+p.left {
+	color: #777;
+}
+.navbar.navbar-default {
+	background: #331a00;
+	border: 0;
+	border-radius: 0;
+}
+.alert {
+	border-radius: 0;
+	border: 0;
+	position: absolute;
+	z-index: 999;
+	top: 0;
+	font-weight: bold;
+	width: 100%;
+	margin-bottom: 0;
+}
+.alert-notice, .alert-alert {
+	color: #fff;
+}

@@ -1,0 +1,8 @@
+<% flash.each do |key, msg| %>
+	<div class="alert alert-<%= key %>" role="alert">
+		<div class="container text-center">
+			<strong><%= msg %></strong>
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		</div>
+	</div>
+<% end %>

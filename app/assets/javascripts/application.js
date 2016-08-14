@@ -13,4 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bsj.min
 //= require_tree .
+
+var has_loaded = false;
+var ready = function() {
+	setTimeout(function(){
+		$(".alert").fadeOut();
+	}, 3000);
+}
+if(!has_loaded) {
+	$(document).ready(ready);
+}
+$(document).bind('turbolinks:visit', ready);
