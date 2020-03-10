@@ -7,6 +7,7 @@
 				<% if current_user == @recipe.user %>
 					<%= link_to "Edit this recipe", edit_recipe_path(@recipe), class: 'btn btn-success btn-lg pull-right' %>
 				<% end %>
+				<%= image_tag(@recipe.picture.url, size: "500") if @recipe.picture? %>
 				<p>Steps:</p>
 				<%= simple_format @recipe.description %>
 			</div>
@@ -15,5 +16,6 @@
 			<%= gravatar_for @recipe.user, size: 250 %>
 			<p><strong>Recipe by: <%= @recipe.user.chefname %> about <%= time_ago_in_words(@recipe.updated_at) %> ago</strong></p>
 		</div>
+		
 	</div>
 </div>
